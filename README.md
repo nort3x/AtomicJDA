@@ -2,9 +2,9 @@
 
 # AtomicJDA
 
-AtomicJDA is an IoC and Dependency-Injection approach to wonderful JDA discord bot library for java, it makes develop and maintenance of cluster of Bots easier!
+AtomicJDA is an IoC and Dependency-Injection approach to wonderful [JDA](https://github.com/DV8FromTheWorld/JDA) discord bot library for java, it makes develop and maintenance of cluster of Bots easier!
 
-its also an example for AtomicDI library
+its also an example for [AtomicDI](https://github.com/nort3x/AtomicDI) library
 
 ## Usage
 + **define your Bots in multiple classes:**
@@ -71,7 +71,7 @@ public class Main {
     + easier approach for organizing multiple bots
     + easier approach for integration with everything else
 + **cons**:
-    + utilizing pretty young library AtomicDI and might undergo some changes
+    + utilizing pretty young library [AtomicDI](https://github.com/nort3x/AtomicDI) and might undergo some changes
     + only continued by community pull requests
 
 
