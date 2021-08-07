@@ -5,9 +5,9 @@ import me.nort3x.atomic.annotation.Atomic;
 import net.dv8tion.jda.api.JDABuilder;
 
 @Atomic
-public class MySimleBot extends BasicBot {
+public class MySimpleBot extends BasicBot {
 
-    public MySimleBot(){
+    public MySimpleBot(){
         super("MyToken");
     }
 

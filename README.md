@@ -36,7 +36,7 @@ public class VerificationOnReaction {
     @Atom
     MySimleBot bot;
 
-    @Rule(forBot = MySimleBot.class)
+  @Rule(forBot = {MySimpleBot.class}) // and any others
     void verifyPressed(MessageReceivedEvent messageReceivedEvent){
         System.out.println(messageReceivedEvent.getMessage().getContentDisplay());
     }

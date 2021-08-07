@@ -14,5 +14,5 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 @AtomicMethod
 public @interface Rule {
-    Class<? extends TicBot> forBot();
+    Class<? extends TicBot>[] forBot();
 }

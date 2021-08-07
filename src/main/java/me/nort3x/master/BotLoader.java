@@ -30,17 +30,20 @@ public class BotLoader extends Policy {
                 .map(x->provider.getMethodsAnnotatedWith(x,Rule.class))
                 .flatMap(List::stream)
                 .forEach(rule->{
-                    TicBot bot = instancesOfBots.getOrDefault(rule.getAnnotation(Rule.class).forBot(),null);
-                    if(bot==null){
-                        AtomicLogger.getInstance().warning("requested Bot DoesntExist: "+ rule.getAnnotation(Rule.class).forBot().getName() +" at: " + rule.getDeclaringClass().getName()+"."+rule.getName());
-                        return;
-                    }
+                    Class<?>[] bots_class = rule.getAnnotation(Rule.class).forBot();
+                    for (Class<?> botsClass : bots_class) {
+                        TicBot bot = instancesOfBots.getOrDefault(botsClass,null);
+                        if(bot==null){
+                            AtomicLogger.getInstance().warning("requested Bot DoesntExist: "+ botsClass.getName() +" at: " + rule.getDeclaringClass().getName()+"."+rule.getName());
+                            return;
+                        }
 
-                    // if bot exist
-                    BasicListener bs = listeners.computeIfAbsent(bot,crap->new BasicListener());
-                    provider.getFactoryOf(rule.getDeclaringClass()).generate().ifPresent(obj->{
-                        bs.addRule(rule,obj);
-                    });
+                        // if bot exist
+                        BasicListener bs = listeners.computeIfAbsent(bot,crap->new BasicListener());
+                        provider.getFactoryOf(rule.getDeclaringClass()).generate().ifPresent(obj->{
+                            bs.addRule(rule,obj);
+                        });
+                    }
                 });
         listeners.forEach((bot,lis)->bot.provideJDA().addEventListener(lis));
     }
