@@ -1,6 +1,7 @@
 package me.nort3x.master;
 
 import me.nort3x.atomic.logger.AtomicLogger;
+import me.nort3x.atomic.logger.Priority;
 import net.dv8tion.jda.api.events.*;
 import net.dv8tion.jda.api.events.application.ApplicationCommandCreateEvent;
 import net.dv8tion.jda.api.events.application.ApplicationCommandDeleteEvent;
@@ -88,7 +89,7 @@ public class BasicListener extends ListenerAdapter {
     void addRule(Method m, Object o) {
         Parameter[] parameters = m.getParameters();
         if (parameters.length != 1) {
-            AtomicLogger.getInstance().warning("Provided Rule is Not acceptable should Only have one Parameter of Event Type : " + m.getDeclaringClass().getName() + "." + m.getName());
+            AtomicLogger.getInstance().warning("Provided Rule is Not acceptable should Only have one Parameter of Event Type : " + m.getDeclaringClass().getName() + "." + m.getName(), Priority.VERY_IMPORTANT);
             return;
         }
         Class<?> type = parameters[0].getType();
@@ -466,7 +467,7 @@ public class BasicListener extends ListenerAdapter {
         } else if (type.equals(GenericPermissionOverrideEvent.class)) {
             GenericPermissionOverrideEventRules.putIfAbsent(m, o);
         }else{
-            AtomicLogger.getInstance().warning("Rule Type is not recognizable: "+m.getDeclaringClass().getName() + "." + m.getName() + " has the parameter type: "+ type.getName());
+            AtomicLogger.getInstance().warning("Rule Type is not recognizable: "+m.getDeclaringClass().getName() + "." + m.getName() + " has the parameter type: "+ type.getName(),Priority.VERY_IMPORTANT);
         }
 
     }
@@ -479,7 +480,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -492,7 +493,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -505,7 +506,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -518,7 +519,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -531,7 +532,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -544,7 +545,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -557,7 +558,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -570,7 +571,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -583,7 +584,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -596,7 +597,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -609,7 +610,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -622,7 +623,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -635,7 +636,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -648,7 +649,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -661,7 +662,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -674,7 +675,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -687,7 +688,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -700,7 +701,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -713,7 +714,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -726,7 +727,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -739,7 +740,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -752,7 +753,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -765,7 +766,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -778,7 +779,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -791,7 +792,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -804,7 +805,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -817,7 +818,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -830,7 +831,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -843,7 +844,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -856,7 +857,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -869,7 +870,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -882,7 +883,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -895,7 +896,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -908,7 +909,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -921,7 +922,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -934,7 +935,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -947,7 +948,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -960,7 +961,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -973,7 +974,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -986,7 +987,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -999,7 +1000,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1012,7 +1013,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1025,7 +1026,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1038,7 +1039,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1051,7 +1052,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1064,7 +1065,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1077,7 +1078,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1090,7 +1091,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1103,7 +1104,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1116,7 +1117,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1129,7 +1130,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1142,7 +1143,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1155,7 +1156,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1168,7 +1169,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1181,7 +1182,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1194,7 +1195,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1207,7 +1208,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1220,7 +1221,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1233,7 +1234,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1246,7 +1247,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1259,7 +1260,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1272,7 +1273,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1285,7 +1286,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1298,7 +1299,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1311,7 +1312,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1324,7 +1325,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1337,7 +1338,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1350,7 +1351,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1363,7 +1364,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1376,7 +1377,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1389,7 +1390,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1402,7 +1403,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1415,7 +1416,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1428,7 +1429,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1441,7 +1442,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1454,7 +1455,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1467,7 +1468,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1480,7 +1481,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1493,7 +1494,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1506,7 +1507,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1519,7 +1520,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1532,7 +1533,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1545,7 +1546,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1558,7 +1559,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1571,7 +1572,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1584,7 +1585,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1597,7 +1598,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1610,7 +1611,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1623,7 +1624,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1636,7 +1637,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1649,7 +1650,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1662,7 +1663,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1675,7 +1676,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1688,7 +1689,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1701,7 +1702,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1714,7 +1715,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1727,7 +1728,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1740,7 +1741,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1753,7 +1754,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1766,7 +1767,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1779,7 +1780,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1792,7 +1793,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1805,7 +1806,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1818,7 +1819,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1831,7 +1832,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1844,7 +1845,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1857,7 +1858,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1870,7 +1871,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1883,7 +1884,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1896,7 +1897,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1909,7 +1910,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1922,7 +1923,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1935,7 +1936,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1948,7 +1949,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1961,7 +1962,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1974,7 +1975,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -1987,7 +1988,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2000,7 +2001,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2013,7 +2014,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2026,7 +2027,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2039,7 +2040,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2052,7 +2053,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2065,7 +2066,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2078,7 +2079,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2091,7 +2092,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2104,7 +2105,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2117,7 +2118,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2130,7 +2131,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2143,7 +2144,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2156,7 +2157,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2169,7 +2170,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2182,7 +2183,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2195,7 +2196,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2208,7 +2209,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2221,7 +2222,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2234,7 +2235,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2247,7 +2248,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2260,7 +2261,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2273,7 +2274,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2286,7 +2287,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2299,7 +2300,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2312,7 +2313,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2325,7 +2326,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2338,7 +2339,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2351,7 +2352,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2364,7 +2365,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2377,7 +2378,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2390,7 +2391,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2403,7 +2404,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2416,7 +2417,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2429,7 +2430,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2442,7 +2443,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2455,7 +2456,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2468,7 +2469,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2481,7 +2482,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2494,7 +2495,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2507,7 +2508,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2520,7 +2521,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2533,7 +2534,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2546,7 +2547,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2559,7 +2560,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2572,7 +2573,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2585,7 +2586,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2598,7 +2599,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2611,7 +2612,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2624,7 +2625,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2637,7 +2638,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2650,7 +2651,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2663,7 +2664,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2676,7 +2677,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2689,7 +2690,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2702,7 +2703,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2715,7 +2716,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2728,7 +2729,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2741,7 +2742,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2754,7 +2755,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2767,7 +2768,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2780,7 +2781,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2793,7 +2794,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2806,7 +2807,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2819,7 +2820,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2832,7 +2833,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2845,7 +2846,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2858,7 +2859,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2871,7 +2872,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }
@@ -2884,7 +2885,7 @@ public class BasicListener extends ListenerAdapter {
             try {
                 m.invoke(o, event);
             }catch(IllegalAccessException | InvocationTargetException e) {
-                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName());
+                AtomicLogger.getInstance().warning("Rule invocation Failed: " + m.getDeclaringClass().getName()+"."+m.getName(),Priority.VERY_IMPORTANT);
             }
         });
     }

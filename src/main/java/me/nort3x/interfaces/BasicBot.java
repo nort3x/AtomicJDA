@@ -1,6 +1,8 @@
 package me.nort3x.interfaces;
 
+import me.nort3x.atomic.annotation.Atomic;
 import me.nort3x.atomic.logger.AtomicLogger;
+import me.nort3x.atomic.logger.Priority;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -10,6 +12,7 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 import javax.security.auth.login.LoginException;
 
+@Atomic
 public abstract class BasicBot implements TicBot{
 
     JDA jda;
@@ -36,7 +39,7 @@ public abstract class BasicBot implements TicBot{
             configure(builder);
             jda = builder.build();
         } catch (LoginException e) {
-            AtomicLogger.getInstance().warning(" LoginFailed: " + provideName() + " with token: "+ token);
+            AtomicLogger.getInstance().warning(" LoginFailed: " + provideName() + " with token: "+ token, Priority.DEBUG,JDA.class);
         }
     }
 
