@@ -39,6 +39,7 @@ public class AtomicJDABotLoader extends AtomicModule {
     Map<AtomicType, Object> instancesOfPools = new ConcurrentHashMap<>();
 
     AtomicLogger logger = AtomicLogger.getInstance();
+
     static class TupleOfMethodAndRuleAnnotation {
         AtomicMethod am;
         Rule r;
@@ -49,7 +50,7 @@ public class AtomicJDABotLoader extends AtomicModule {
     }
 
     @Override
-    public void onModuleLoaded(AtomicEnvironment rel,String...args) {
+    public void onModuleLoaded(AtomicEnvironment rel, String... args) {
 
         list_of_bots = rel.getAllAtomicTypesDerivedFromAtomicType(AtomicType.of(AtomicJDABot.class)); // get all scanned bots (implementations)
         list_of_pools = rel.getAllAtomicTypesAnnotatedWith(AtomicAnnotation.of(BotCommandPool.class)); // get all command pools
@@ -65,13 +66,13 @@ public class AtomicJDABotLoader extends AtomicModule {
                             .forEach(method -> {
                                 AtomicEnvironment.getAnnotationIfExist(Rule.class, method.getCorrespondingMethod()) // get rules and do:
                                         .ifPresent(rule -> {
-                                            logger.info("Rule: "+method.getCorrespondingMethod().getName()+" Discovered in CommandPool: "+pool.getCorrespondingType().getName(), Priority.VERBOSE, AtomicJDABotLoader.class);
+                                            logger.info("Rule: " + method.getCorrespondingMethod().getName() + " Discovered in CommandPool: " + pool.getCorrespondingType().getName(), Priority.VERBOSE, AtomicJDABotLoader.class);
                                             Arrays.stream((rule.forBot())) // for each bot
                                                     .forEach(target_bot -> {
-                                                         boolean accepted= listeners.computeIfAbsent(AtomicType.of(target_bot), x -> new BasicListener()) // add to listeners
+                                                        boolean accepted = listeners.computeIfAbsent(AtomicType.of(target_bot), x -> new BasicListener()) // add to listeners
                                                                 .addRule(method.getCorrespondingMethod(), poolInstance);
-                                                         if(accepted)
-                                                            logger.info("Rule: "+method.getCorrespondingMethod().getName()+" Registered for Bot: "+target_bot.getSimpleName(), Priority.VERBOSE, AtomicJDABotLoader.class);
+                                                        if (accepted)
+                                                            logger.info("Rule: " + method.getCorrespondingMethod().getName() + " Registered for Bot: " + target_bot.getSimpleName(), Priority.VERBOSE, AtomicJDABotLoader.class);
                                                     });
                                         });
                             });
@@ -89,15 +90,15 @@ public class AtomicJDABotLoader extends AtomicModule {
                 .filter(x -> !Modifier.isAbstract(x.getCorrespondingType().getModifiers()))
                 .forEach(type -> {
                     AtomicJDABot bot = (AtomicJDABot) Container.makeContainerAroundShared(type).getCentralShared();
-                    instancesOfBots.put(type,bot );
-                    logger.info("invoking [start] Bot: "+type.getCorrespondingType().getName()+" a.k.a "+bot.provideName(), Priority.VERBOSE, AtomicJDABotLoader.class);
+                    instancesOfBots.put(type, bot);
+                    logger.info("invoking [start] for Bot: " + type.getCorrespondingType().getName() + " a.k.a " + bot.provideName(), Priority.VERBOSE, AtomicJDABotLoader.class);
                 });
 
-        listeners.forEach((botType, listener) -> {
+        listeners.forEach((botType, listener) -> { // attach listeners to each bot
             Optional.ofNullable(instancesOfBots.getOrDefault(botType, null))
                     .ifPresent(botInstance -> {
                         botInstance.provideJDA().addEventListener(listener);
-                        logger.info("attaching Rules to Bot: "+botType.getCorrespondingType().getName()+" a.k.a "+botInstance.provideName(), Priority.VERBOSE, AtomicJDABotLoader.class);
+                        logger.info("attaching Rules to Bot: " + botType.getCorrespondingType().getName() + " a.k.a " + botInstance.provideName(), Priority.VERBOSE, AtomicJDABotLoader.class);
                     });
         });
     }

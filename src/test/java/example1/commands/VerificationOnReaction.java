@@ -23,14 +23,14 @@ public class VerificationOnReaction {
         System.out.println(messageReceivedEvent.getMessage().getContentDisplay());
     }
 
-    @Rule(forBot = {MySimpleBot.class}) // and many others?
-    void onReactionAdded(MessageReactionAddEvent event){
-        System.out.println(event.getReactionEmote().getEmoji());
-    }
-
-    @Exclude
-    @Rule(forBot = MySimpleBot.class)
-    void onSlashCommandX(SlashCommandEvent event){
-        //todo
-    }
+//    @Rule(forBot = {MySimpleBot.class}) // and many others?
+//    void onReactionAdded(MessageReactionAddEvent event){
+//        System.out.println(event.getReactionEmote().getEmoji());
+//    }
+//
+//    @Exclude
+//    @Rule(forBot = MySimpleBot.class)
+//    void onSlashCommandX(SlashCommandEvent event){
+//        //todo
+//    }
 }
