@@ -1,6 +1,5 @@
 package me.nort3x.interfaces;
 
-import me.nort3x.atomic.annotation.Atomic;
 import me.nort3x.atomic.logger.AtomicLogger;
 import me.nort3x.atomic.logger.Priority;
 import net.dv8tion.jda.api.JDA;
@@ -10,13 +9,14 @@ import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
-import javax.security.auth.login.LoginException;
 
-@Atomic
-public abstract class BasicBot implements TicBot{
+/**
+ * implement this class if you want to hardcode token and just work with regular implementation of JDA
+ */
+public abstract class AbstractAtomicBot implements AtomicJDABot {
 
     JDA jda;
-    public BasicBot(String token){
+    public AbstractAtomicBot(String token){
         JDABuilder builder = JDABuilder.createDefault(token);
         // Disable cache for member activities (streaming/games/spotify)
         builder.disableCache(CacheFlag.ACTIVITY);
@@ -38,8 +38,8 @@ public abstract class BasicBot implements TicBot{
         try {
             configure(builder);
             jda = builder.build();
-        } catch (LoginException e) {
-            AtomicLogger.getInstance().warning(" LoginFailed: " + provideName() + " with token: "+ token, Priority.DEBUG,JDA.class);
+        } catch (Exception e) {
+            AtomicLogger.getInstance().fatal("Bot: " + provideName() + " with token: "+ token + " Build Exception: "+AtomicLogger.exceptionToString(e), Priority.VERY_IMPORTANT,JDA.class);
         }
     }
 

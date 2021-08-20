@@ -1,7 +1,6 @@
-package me.nort3x.master;
+package me.nort3x.annotation;
 
 import me.nort3x.atomic.annotation.Atomic;
-import me.nort3x.atomic.annotation.Exclude;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -14,6 +13,5 @@ import java.lang.annotation.RetentionPolicy;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Atomic
-@Exclude
 public @interface BotCommandPool {
 }

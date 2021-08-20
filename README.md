@@ -58,9 +58,9 @@ public class VerificationOnReaction {
 + **hit the run button:**
 ```java
 
-public class Main {
+public class example1.Main {
     public static void main(String[] args) {
-        Runner.run(Main.class,args);
+        Runner.run(example1.Main.class,args);
     }
 }
 ```

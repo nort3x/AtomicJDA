@@ -21,7 +21,7 @@ dependencies {
 
     implementation 'net.dv8tion:JDA:4.3.0_277'
 
-    implementation 'com.github.nort3x:AtomicDI:2.0.0-alpha'
+    implementation 'com.github.nort3x:AtomicDI:85858c31e4bd603142c986dcdad9b415fcacfff6'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }

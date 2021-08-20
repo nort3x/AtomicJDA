@@ -1,14 +1,15 @@
-package me.nort3x.implementations;
+package example1.implementations;
 
-import me.nort3x.interfaces.BasicBot;
+import me.nort3x.interfaces.AbstractAtomicBot;
 import me.nort3x.atomic.annotation.Atomic;
 import net.dv8tion.jda.api.JDABuilder;
 
 @Atomic
-public class MySimpleBot extends BasicBot {
+public class MySimpleBot extends AbstractAtomicBot {
 
     public MySimpleBot(){
-        super("MyToken");
+        super("ODU1MTgwMjQ5NTI3MzUzMzg1.YMuuqw.klBDTo1YORGtxCWSbyzsGzJblFg");
+        System.out.println("created");
     }
 
     @Override
