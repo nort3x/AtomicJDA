@@ -1,7 +1,5 @@
 plugins {
     id 'java'
-    id 'application'
-    id "com.github.johnrengelman.shadow" version "7.0.0"
 }
 
 allprojects {
@@ -16,13 +14,8 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 group 'me.nort3x'
-version '2.0.1'
+version '1.0.0'
 
-
-
-
-
-mainClassName = 'me.nort3x.Main'
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
