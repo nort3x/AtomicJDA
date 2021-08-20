@@ -13,13 +13,13 @@ import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 @Atomic
 @BotCommandPool
 public class VerificationOnReaction {
-//    @Atom
-//    MySimpleBot bot;
+    @Atom
+    MySimpleBot bot;
 
     @Rule(forBot = MySimpleBot.class)
     void verifyPressed(MessageReceivedEvent messageReceivedEvent){
-//        if(messageReceivedEvent.getAuthor().equals(bot.provideJDA().getSelfUser()))
-//            return;
+        if(messageReceivedEvent.getAuthor().equals(bot.provideJDA().getSelfUser()))
+            return;
         System.out.println(messageReceivedEvent.getMessage().getContentDisplay());
     }
 

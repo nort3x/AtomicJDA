@@ -8,8 +8,7 @@ import net.dv8tion.jda.api.JDABuilder;
 public class MySimpleBot extends AbstractAtomicBot {
 
     public MySimpleBot(){
-        super("ODU1MTgwMjQ5NTI3MzUzMzg1.YMuuqw.klBDTo1YORGtxCWSbyzsGzJblFg");
-        System.out.println("created");
+        super("token"); // its exposed and burnt away
     }
 
     @Override

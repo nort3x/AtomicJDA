@@ -59,7 +59,7 @@ public class AtomicJDABotLoader extends AtomicModule {
         list_of_pools.parallelStream()
                 .forEach(pool -> {
 
-                    Object poolInstance = instancesOfPools.computeIfAbsent(pool, x -> Container.makeContainerAround(x).getCentral()); // make pool instance
+                    Object poolInstance = instancesOfPools.computeIfAbsent(pool, x -> Container.makeContainerAroundShared(x).getCentralShared()); // make pool instance
 
                     pool.getMethodSet()
                             .forEach(method -> {
@@ -88,7 +88,7 @@ public class AtomicJDABotLoader extends AtomicModule {
                 .filter(x -> !x.getCorrespondingType().isInterface())
                 .filter(x -> !Modifier.isAbstract(x.getCorrespondingType().getModifiers()))
                 .forEach(type -> {
-                    AtomicJDABot bot = (AtomicJDABot) Container.makeContainerAround(type).getCentral();
+                    AtomicJDABot bot = (AtomicJDABot) Container.makeContainerAroundShared(type).getCentralShared();
                     instancesOfBots.put(type,bot );
                     logger.info("invoking [start] Bot: "+type.getCorrespondingType().getName()+" a.k.a "+bot.provideName(), Priority.VERBOSE, AtomicJDABotLoader.class);
                 });
