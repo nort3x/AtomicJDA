@@ -14,7 +14,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 group 'me.nort3x'
-version '1.0.0'
+version '1.0.1'
 
 repositories {
     mavenCentral()
@@ -29,7 +29,7 @@ dependencies {
 
 
     implementation 'net.dv8tion:JDA:4.3.0_277'
-    implementation 'com.github.nort3x:AtomicDI:2.0.0'
+    implementation 'com.github.nort3x:AtomicDI:2.0.5'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
